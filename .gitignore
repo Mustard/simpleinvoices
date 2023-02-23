@@ -5,4 +5,5 @@ custom.config.php
 *.tpl.php
 zend_cache---*
 *.log
+*/**.log
 tmp/cache/*
