@@ -52,7 +52,7 @@ class TableBox extends GenericContainerBox {
   function append_line(&$e) {}
 
   function &create(&$root, &$pipeline) {
-    $box =& new TableBox();   
+    $box = new TableBox();   
     $box->readCSS($pipeline->getCurrentCSSState());
 
     // This row should not inherit any table specific properties!
@@ -61,7 +61,7 @@ class TableBox extends GenericContainerBox {
     $css_state =& $pipeline->getCurrentCSSState();
     $css_state->pushDefaultState();
 
-    $row =& new TableRowBox($root);
+    $row = new TableRowBox($root);
     $row->readCSS($css_state);
 
     $box->add_child($row);
@@ -745,7 +745,7 @@ class TableBox extends GenericContainerBox {
     case TABLE_LAYOUT_AUTO:
     default:
       require_once(HTML2PS_DIR.'strategy.table.layout.auto.php');
-      $strategy =& new StrategyTableLayoutAuto();
+      $strategy = new StrategyTableLayoutAuto();
       break;
     };
     
@@ -990,7 +990,7 @@ class TableBox extends GenericContainerBox {
       };
     };
 
-    $position_strategy =& new StrategyPositionAbsolute();
+    $position_strategy = new StrategyPositionAbsolute();
     $position_strategy->apply($this);
 
     $this->reflow_content($context);

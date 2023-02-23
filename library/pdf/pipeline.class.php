@@ -320,7 +320,8 @@ class Pipeline {
 
     $this->pre_tree_filters = array();
 
-    $this->_dispatcher =& new Dispatcher();
+    // $this->_dispatcher =& new Dispatcher();
+    $this->_dispatcher = new Dispatcher();
 
     $this->_dispatcher->add_event('before-page-heights');
     $this->_dispatcher->add_event('before-page');
@@ -446,10 +447,12 @@ class Pipeline {
 //   }
 
   function &get_counters() {
-    $counter_collection =& new CSSCounterCollection();
+    // $counter_collection =& new CSSCounterCollection();
+    $counter_collection = new CSSCounterCollection();
 
     foreach ($this->_counters as $counter_name => $counter_value) {
-      $counter =& new CSSCounter($counter_name);
+      // $counter =& new CSSCounter($counter_name);
+      $counter = new CSSCounter($counter_name);
       $counter->set($counter_value);
       $counter_collection->add($counter);
     };
@@ -584,7 +587,8 @@ class Pipeline {
   }
 
   function &get_page_rules($page_no) {
-    $collection =& new CSSPropertyCollection();
+    // $collection =& new CSSPropertyCollection();
+    $collection = new CSSPropertyCollection();
 
     foreach ($this->_page_at_rules[CSS_PAGE_SELECTOR_ALL] as $rule) {
       $collection->merge($rule->css);
@@ -689,92 +693,92 @@ class Pipeline {
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP] = 
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_TOP,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_LEFT_CORNER])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_LEFT_CORNER] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_LEFT_CORNER] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_TOP_LEFT_CORNER,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_LEFT])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_LEFT] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_LEFT] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_TOP_LEFT,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_CENTER])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_CENTER] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_CENTER] = 
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_TOP_CENTER,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT] = 
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT_CORNER])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT_CORNER] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT_CORNER] = 
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_TOP_RIGHT_CORNER,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_BOTTOM,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT_CORNER])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT_CORNER] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT_CORNER] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT_CORNER,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_BOTTOM_LEFT,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_CENTER])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_CENTER] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_CENTER] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_BOTTOM_CENTER,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT] = 
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT_CORNER])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT_CORNER] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT_CORNER] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_BOTTOM_RIGHT_CORNER,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_TOP])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_TOP] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_TOP] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_LEFT_TOP,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_MIDDLE])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_MIDDLE] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_MIDDLE] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_LEFT_MIDDLE,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_BOTTOM])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_BOTTOM] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_LEFT_BOTTOM] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_LEFT_BOTTOM,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_TOP])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_TOP] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_TOP] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_RIGHT_TOP,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_MIDDLE])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_MIDDLE] =& 
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_MIDDLE] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_RIGHT_MIDDLE,$this); 
     };
 
     if (!isset($applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_BOTTOM])) { 
-      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_BOTTOM] =&
+      $applicable_margin_boxes[CSS_MARGIN_BOX_SELECTOR_RIGHT_BOTTOM] =
         new CSSAtRuleMarginBox(CSS_MARGIN_BOX_SELECTOR_RIGHT_BOTTOM,$this); 
     };
 
@@ -982,7 +986,7 @@ class Pipeline {
 
     // Save and disable magic_quotes_runtime
     $mq_runtime = get_magic_quotes_runtime();
-    set_magic_quotes_runtime(0);
+    //set_magic_quotes_runtime(0);
 
     $this->_prepare($media);
 
@@ -1000,7 +1004,7 @@ class Pipeline {
     $this->close();
 
     // Restore magic_quotes_runtime setting
-    set_magic_quotes_runtime($mq_runtime);
+    //set_magic_quotes_runtime($mq_runtime);
 
     return true;
   }
