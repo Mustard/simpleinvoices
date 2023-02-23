@@ -7,3 +7,4 @@ zend_cache---*
 *.log
 */**.log
 tmp/cache/*
+tmp/log/*
