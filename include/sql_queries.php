@@ -2183,7 +2183,7 @@ function lineItemTaxCalc($tax, $unit_price, $quantity)
 		$tax_amount = $tax['tax_percentage'] * $quantity;
 	}
 
-	return $tax_amount;
+	return round($tax_amount, 2);
 }
 /*
 Function: invoice_item_tax
