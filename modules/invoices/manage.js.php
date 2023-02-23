@@ -51,7 +51,7 @@
 				{display: '{/literal}{$LANG.customer}{literal}', name : 'c.name', isdefault: true}
 				],
 
-			sortname: "{/literal}{$smarty.get.sortname|default:'index_id'}{literal}",
+			sortname: "{/literal}{$smarty.get.sortname|default:'date'}{literal}",
 			sortorder: "{/literal}{$smarty.get.sortorder|default:'desc'}{literal}",
 			usepager: true,
 			/*title: 'Manage Custom Fields',*/
