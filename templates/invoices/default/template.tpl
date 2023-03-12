@@ -250,7 +250,8 @@
 			{if $invoiceItem.description != null}
 			<tr class="">
 				<td class=""></td>
-				<td class="" colspan="5">{$LANG.description}: {$invoiceItem.description|htmlsafe}</td>
+				<td class="" colspan="5">{$invoiceItem.description|htmlsafe}</td>
+				<!-- <td class="" colspan="5">{$LANG.description}: {$invoiceItem.description|htmlsafe}</td> -->
 			</tr>
 			{/if}
 
