@@ -1703,3 +1703,17 @@ PRIMARY KEY ( `domain_id`, `id` )
     $patch['293']['name']  = "Add department to the customers";
     $patch['293']['patch'] = "ALTER TABLE `".TB_PREFIX."customers` ADD COLUMN `department` VARCHAR(255) NULL AFTER `name`";
     $patch['293']['date']  = "20161004";
+
+    $patch['294']['name'] = "Widen preferences column";
+    $patch['294']['patch'] = "ALTER TABLE `".TB_PREFIX."preferences`
+        MODIFY COLUMN pref_description VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_heading VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_wording VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_payment_method VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_payment_line1_name VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_payment_line1_value VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_payment_line2_name VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_payment_line2_value VARCHAR(500) DEFAULT NULL,
+        MODIFY COLUMN pref_inv_payment_line1_name VARCHAR(500) DEFAULT NULL
+    ";
+    $patch['294']['date'] = "20230224";
