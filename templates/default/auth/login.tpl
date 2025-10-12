@@ -15,7 +15,7 @@
 				<tr>
 					<th>{$LANG.email}</th>
 					<td>
-						<input name="user" size="25" type="text" title="user" value="" />
+						<input name="user" size="25" type="text" title="user" value="" autofocus />
 					</td>
 				</tr>       
 				<tr>
@@ -58,10 +58,10 @@
 {literal}
 <script language="JavaScript">
 	$(document).ready(function(){
-		$('.si_box').hide();
-		$('.si_box').slideDown(500);
+		// $('.si_box').hide();
+		// $('.si_box').slideDown(500);
 	});
-	document.frmLogin.user.focus();
+	// document.frmLogin.user.focus();
 </script>
 {/literal}
 
